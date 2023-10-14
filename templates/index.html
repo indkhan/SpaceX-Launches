@@ -1,0 +1,56 @@
+{%from "card.html" import render_launch%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceX Launches</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+</head>
+<body>
+    <h1>SpaceX Launches</h1> 
+
+    <ul>
+        <li>
+            <a href="#successful">Successful</a>
+        </li>
+        <li>
+            <a href="#failed">Failed</a>
+        </li>
+        <li>
+            <a href="#upcoming">Upcoming</a>
+        </li>
+    </ul>
+
+
+    <div>
+        <div id="successful">
+            <h1>Successful</h1>
+            {%for launch in launches.successful %}
+
+            {{render_launch(launch)}}
+        
+            {%endfor%}
+        </div>
+        <div id="failed">
+            <h1>Failed</h1>
+            {%for launch in launches.failed %}
+
+            {{render_launch(launch)}}
+        
+            {%endfor%}
+        </div>
+        <div id="upcoming">
+            <h1>Upcoming</h1>
+            {%for launch in launches.upcoming %}
+
+            {{render_launch(launch)}}
+        
+            {%endfor%}
+        </div>
+    </div>
+
+
+</body>
+</html>

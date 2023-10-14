@@ -1,0 +1,15 @@
+{%macro render_launch(launch) %}
+<div>
+    {% if launch.links.patch.large %}
+    <img src="{{launch.links.patch.large}}" alt="{{launch.name}}">
+    {%endif%}
+
+    <div>
+        <div>{{launch.name}}</div>
+        {%if launch.details%}
+        <p>{{launch.details}}</p>
+        {%endif%}
+        <p>{{launch.date_utc|date_only}}</p>
+    </div>
+</div>
+{%endmacro%}
