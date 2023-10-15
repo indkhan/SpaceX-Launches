@@ -30,10 +30,9 @@
         <div id="successful" class="container">
             <h1>Successful</h1>
             {%for launch in launches.successful %}
-
-            {{render_launch(launch)}}
-        
+            {{render_launch(launch)}}  
             {%endfor%}
+            
         </div>
         <div id="failed" class="container">
             <h1>Failed</h1>
